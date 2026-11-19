@@ -1,0 +1,233 @@
+{
+  "data": {
+    "loans": 49200,
+    "fraud_loans": 4200,
+    "fraud_rate": 0.08536585365853659,
+    "rings": 160,
+    "lone_fraud": 600,
+    "known_fraud_labels": 1052,
+    "label_rate": 0.25
+  },
+  "models": {
+    "xgb_application_only": {
+      "pr_auc": 0.8173802745773947,
+      "roc_auc": 0.9406445326278661,
+      "precision_at_top5pct": 0.9390243902439024,
+      "recall_at_top5pct": 0.55,
+      "ring_fraud_recall_at_top5pct": 0.5880819451647255,
+      "lone_fraud_recall_at_top5pct": 0.31434066952698764,
+      "fraud_dollars_in_queue": 42989045.35999999,
+      "pr_auc_std": 0.007513525624214613,
+      "precision_at_top5pct_std": 0.0076049946885649285,
+      "n_seeds": 3
+    },
+    "xgb_+graph_feats_public": {
+      "pr_auc": 0.8028299600315609,
+      "roc_auc": 0.942391688712522,
+      "precision_at_top5pct": 0.9532520325203252,
+      "recall_at_top5pct": 0.5583333333333333,
+      "ring_fraud_recall_at_top5pct": 0.5837584216353623,
+      "lone_fraud_recall_at_top5pct": 0.3992034800572064,
+      "fraud_dollars_in_queue": 42589585.653333336,
+      "pr_auc_std": 0.019154388088914228,
+      "precision_at_top5pct_std": 0.03485046382008589,
+      "n_seeds": 3
+    },
+    "xgb_+graph_feats_all": {
+      "pr_auc": 0.880414241770399,
+      "roc_auc": 0.9648783950617285,
+      "precision_at_top5pct": 0.9905149051490515,
+      "recall_at_top5pct": 0.5801587301587302,
+      "ring_fraud_recall_at_top5pct": 0.6243784007488133,
+      "lone_fraud_recall_at_top5pct": 0.3020783674982785,
+      "fraud_dollars_in_queue": 38121862.10666666,
+      "pr_auc_std": 0.00461069149619134,
+      "precision_at_top5pct_std": 0.010669387363159652,
+      "n_seeds": 3
+    },
+    "hetero_sage_public": {
+      "pr_auc": 0.8951158673710271,
+      "roc_auc": 0.962521406525573,
+      "precision_at_top5pct": 0.9986449864498645,
+      "recall_at_top5pct": 0.584920634920635,
+      "ring_fraud_recall_at_top5pct": 0.6503513398132058,
+      "lone_fraud_recall_at_top5pct": 0.1803789925313841,
+      "fraud_dollars_in_queue": 53931516.69333333,
+      "train_seconds": 58.96994654337565,
+      "pr_auc_std": 0.005138118321604854,
+      "precision_at_top5pct_std": 0.0009581392699004892,
+      "n_seeds": 3
+    },
+    "hetero_sage_all": {
+      "pr_auc": 0.9481218644112261,
+      "roc_auc": 0.9814391975308642,
+      "precision_at_top5pct": 0.9993224932249323,
+      "recall_at_top5pct": 0.5853174603174603,
+      "ring_fraud_recall_at_top5pct": 0.6503536999231311,
+      "lone_fraud_recall_at_top5pct": 0.1834975369458128,
+      "fraud_dollars_in_queue": 58125971.04666666,
+      "train_seconds": 214.37489064534506,
+      "pr_auc_std": 0.006257980760672962,
+      "precision_at_top5pct_std": 0.0009581392699004892,
+      "n_seeds": 3
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "ring_discovery": {
+    "gnn_ranked": {
+      "top_k_cases": 50,
+      "mean_case_purity": 1.0,
+      "cases_majority_fraud": 50,
+      "distinct_true_rings_surfaced": 50,
+      "total_true_rings": 160,
+      "fraud_dollars_in_top_cases": 152762582.04000002,
+      "share_of_all_fraud_dollars": 0.40889249856049936
+    },
+    "size_ranked_baseline": {
+      "top_k_cases": 50,
+      "mean_case_purity": 0.0,
+      "cases_majority_fraud": 0,
+      "distinct_true_rings_surfaced": 0,
+      "total_true_rings": 160,
+      "fraud_dollars_in_top_cases": 0.0,
+      "share_of_all_fraud_dollars": 0.0
+    },
+    "n_candidate_cases": 327,
+    "seconds": 3.4042699337005615
+  },
+  "relation_importance_top200": {
+    "address": 0.00019999999494757503,
+    "lender": 0.00019999999494757503,
+    "phone": 0.002199999988079071,
+    "email": 0.0007999999797903001,
+    "account": 0.000699999975040555,
+    "ip": 0.0007999999797903001,
+    "preparer": 0.0012000000569969416
+  },
+  "example_explanation": {
+    "loan_number": "1000046328",
+    "score": 0.9568761587142944,
+    "truly_fraud (hidden)": 1,
+    "relation_attribution": {
+      "address": -0.00039999998989515007,
+      "lender": 0.0005000000237487257,
+      "phone": 0.0010999999940395355,
+      "email": 0.000699999975040555,
+      "account": 0.0006000000284984708,
+      "ip": 0.0017000000225380063,
+      "preparer": 0.0010000000474974513
+    },
+    "top_application_features": [
+      [
+        "log_amount_per_job",
+        0.5374
+      ],
+      [
+        "log_amount",
+        0.2873
+      ],
+      [
+        "at_solo_max",
+        0.1198
+      ],
+      [
+        "charged_off",
+        0.098
+      ],
+      [
+        "naics_812990",
+        0.0442
+      ],
+      [
+        "new_business",
+        0.0438
+      ]
+    ],
+    "evidence_trail": [
+      {
+        "relation": "address",
+        "identifier": "ADDR-0046635",
+        "other_loans": 6,
+        "confirmed_fraud_among_them": 2,
+        "total_amount_linked": 849497.0
+      },
+      {
+        "relation": "preparer",
+        "identifier": "PREP-0000478",
+        "other_loans": 15,
+        "confirmed_fraud_among_them": 1,
+        "total_amount_linked": 1177894.0
+      },
+      {
+        "relation": "phone",
+        "identifier": "PHONE-0046717",
+        "other_loans": 4,
+        "confirmed_fraud_among_them": 0,
+        "total_amount_linked": 320757.3
+      },
+      {
+        "relation": "email",
+        "identifier": "EMAIL-0046708",
+        "other_loans": 1,
+        "confirmed_fraud_among_them": 0,
+        "total_amount_linked": 3101.79
+      }
+    ]
+  },
+  "amazon_real_data": {
+    "nodes": 11944,
+    "labelled": 8639,
+    "fraud_rate": 0.09503414747077207,
+    "runs": {
+      "0": {
+        "xgboost_features_only": {
+          "roc_auc": 0.9723246838050669,
+          "pr_auc": 0.8987991458955006
+        },
+        "hetero_sage_relation_aware": {
+          "roc_auc": 0.9699425329798894,
+          "pr_auc": 0.89129952673219
+        }
+      },
+      "1": {
+        "xgboost_features_only": {
+          "roc_auc": 0.9787972543318901,
+          "pr_auc": 0.9139004562097016
+        },
+        "hetero_sage_relation_aware": {
+          "roc_auc": 0.9771618638204589,
+          "pr_auc": 0.898802278059241
+        }
+      },
+      "2": {
+        "xgboost_features_only": {
+          "roc_auc": 0.980833475851025,
+          "pr_auc": 0.9252527403313936
+        },
+        "hetero_sage_relation_aware": {
+          "roc_auc": 0.9787049417361764,
+          "pr_auc": 0.905866891699561
+        }
+      }
+    },
+    "summary": {
+      "xgboost_features_only": {
+        "roc_auc": 0.9773184713293274,
+        "pr_auc": 0.9126507808121986,
+        "roc_auc_std": 0.0036276700416696768,
+        "pr_auc_std": 0.010835725820759793
+      },
+      "hetero_sage_relation_aware": {
+        "roc_auc": 0.9752697795121749,
+        "pr_auc": 0.8986562321636641,
+        "roc_auc_std": 0.003819244172634558,
+        "pr_auc_std": 0.005947998407075445
+      }
+    },
+    "published_reference": "CARE-GNN (Dou et al., CIKM 2020) reports AUC 89.73 on Amazon with 40% training data"
+  }
+}

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+mlflow.db
+mlruns/
+artifacts/
+data/raw/
+data/synthetic_xbd/
+data/*.csv.gz
+!data/simulated_ppp_loans.csv.gz
+data/corpus/
+.venv/
