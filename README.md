@@ -71,6 +71,7 @@ structurally, it adds a lot. Knowing *when* a GNN helps is the real lesson.
 ```bash
 pip install -r requirements.txt
 streamlit run app.py                      # case explorer works right after cloning (results are committed)
+bash scripts/download_data.sh             # Amazon benchmark graph (for the real-data validation)
 python scripts/run_pipeline.py            # full experiment ~30 min on 2 CPU cores (restart-safe); --quick for a smoke test
 pytest -q                                 # 7 tests: schema, leakage, GNN training, ring detection, explanations
 ```
